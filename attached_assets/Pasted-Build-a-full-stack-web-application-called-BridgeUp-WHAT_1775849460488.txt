@@ -1,0 +1,417 @@
+Build a full-stack web application called BridgeUp.
+
+---
+
+WHAT BRIDGEUP IS
+
+BridgeUp is a cross-institutional platform connecting HSG (University of 
+St. Gallen) business students with ETH Zurich technical students to form 
+verified, recruiter-facing collaborative competition records. It is a 
+professional, recruiter-grade platform — not a social network. Think of 
+it as the verified project layer that LinkedIn and GitHub are missing for 
+cross-disciplinary student work.
+
+---
+
+TECH STACK
+
+- React with React Router for all routing and navigation
+- Tailwind CSS for styling
+- Firebase for authentication (email/password) and Firestore as the database
+- All Firebase credentials must be stored as environment variables, 
+  never hardcoded
+- EmailJS to send the sponsor express interest form submission to 
+  gfarruggio05@gmail.com — store the EmailJS service ID, template ID, 
+  and public key as environment variables
+- No external animation libraries — use pure CSS, Canvas API, and 
+  IntersectionObserver only
+
+---
+
+DESIGN SYSTEM — CINVEN-INSPIRED
+
+The visual language must match the authority and clarity of top-tier 
+European private equity and finance firms like cinven.com. This is a 
+light-mode site — clean white base with a strong red accent and 
+near-black text.
+
+Colors:
+- Background: #FFFFFF (clean white base)
+- Primary text: #1A1A1A (near-black charcoal)
+- Accent / brand red: #E4002B (used on CTAs, hover states, active nav 
+  links, and left border reveals on cards)
+- Secondary accent: #C8001F (hover state on red elements)
+- Muted text: #6B6B6B (captions, metadata, secondary labels)
+- Card background: #F7F7F7 (subtle depth against white)
+- Border: #E0E0E0 (dividers and card borders)
+- Dark section background: #111111 (footer and high-contrast CTA 
+  sections only, with white text)
+- Nav background on scroll: rgba(255,255,255,0.92) with 
+  backdrop-filter: blur(12px)
+
+Typography:
+- Display headings: Playfair Display (serif) — hero titles and section 
+  headers
+- Body and UI: Inter or DM Sans (clean sans-serif)
+- Heading scale: H1 64px, H2 40px, H3 28px, body 16px, caption 13px
+- Letter spacing on all-caps labels: 0.12em
+- Line height on body: 1.7
+
+Layout principles:
+- Full-bleed sections with generous vertical padding (min 120px top 
+  and bottom per section)
+- Max content width: 1200px, centered, with 48px horizontal padding
+- Thin horizontal rules (#E0E0E0) as section dividers — no heavy 
+  gradient blocks
+- Grid: 12-column, content typically spanning 8 columns centered or 
+  split 6+6
+- All text left-aligned in content sections, centered only in hero 
+  and CTA sections
+
+Animations (all must respect prefers-reduced-motion):
+- Hero headline: word-by-word fade in and slide up, 80ms stagger 
+  between words
+- Scroll-triggered sections: fade in + slide up, 100ms stagger between 
+  child elements, triggered by IntersectionObserver at 20% visibility
+- Navbar: transparent on load, transitions to rgba(255,255,255,0.92) 
+  with backdrop-filter: blur(12px) after 60px scroll
+- Cards: on hover, lift with box-shadow and reveal a left border in 
+  accent red (#E4002B)
+- Page transitions: fade out on navigate, fade in on new page load
+- Stats and numbers: count-up animation when scrolled into view
+- Marquee ticker: horizontal scrolling text strip between hero and 
+  the first content section
+- Hero background: three layered effects — a perspective grid drawn 
+  on Canvas using #E0E0E0 lines on white, slow-moving aurora orbs 
+  in pale red and pale grey at very low opacity, and a noise texture 
+  overlay. These three layers must be fixed-position and extend as a 
+  subtle persistent background across the entire site at reduced 
+  opacity.
+
+Micro-interactions:
+- Button press: slight scale down (0.97) on active state
+- Input focus: accent red ring, no default browser outline
+- All interactive elements have a 200ms ease transition
+
+---
+
+NAVIGATION
+
+The navbar contains:
+- Logo on the left: geometric bridge mark in accent red and charcoal, 
+  wordmark "BridgeUp" next to it
+- Centre links: How It Works, Competitions, For Students, For Sponsors
+- Right side: Login button (outlined) and Join BridgeUp button 
+  (filled, accent red)
+- Clicking "Join BridgeUp" opens a dropdown or routes to /join with 
+  two tabs visible: "For Students" and "For Sponsors", each 
+  highlighting the respective tab
+- On scroll: rgba(255,255,255,0.92) with blur backdrop
+- Mobile: hamburger menu sliding in from the right
+
+---
+
+PAGES AND ROUTES
+
+Public:
+- / — Landing page
+- /how-it-works — Platform model explanation
+- /competitions — All competitions list
+- /competitions/:id — Individual competition detail
+- /for-students — Student value proposition page
+- /for-sponsors — Sponsor value proposition page
+- /join/student — Student registration page (tab: For Students active)
+- /join/sponsor — Sponsor express interest page (tab: For Sponsors active)
+- /login — Login page
+
+Authenticated (students + admin):
+- /dashboard — Student dashboard
+- /dashboard/enter — Competition entry registration flow
+
+Authenticated (sponsors + admin):
+- /students — Full student directory
+- /sponsor — Sponsor dashboard
+
+Admin only:
+- /admin — Admin panel
+
+---
+
+FOR STUDENTS PAGE (/for-students)
+
+This page makes the case for why a student should join BridgeUp.
+Sections:
+
+1. Hero
+   Headline: "Build a record that speaks for itself."
+   Subheadline: "BridgeUp connects HSG business students with ETH Zurich 
+   engineers to compete, collaborate, and create verified project records 
+   that recruiters can actually see."
+   Tab bar at the top of the page with two tabs: "For Students" 
+   (active) and "For Sponsors" — clicking For Sponsors routes to 
+   /for-sponsors.
+
+2. Value proposition — three cards in a row:
+   - Verified Records: "Every competition entry is logged, timestamped, 
+     and tied to your institutional identity. No more work that 
+     disappears after the final presentation."
+   - Cross-Disciplinary Teams: "Work with ETH engineers on real briefs. 
+     The collaboration itself is the signal — and BridgeUp makes it 
+     visible."
+   - Recruiter-Facing Profiles: "Your profile is built for the people 
+     hiring you. Skills, projects, and team history — structured for 
+     recruiters, not social followers."
+
+3. How it works — three steps:
+   - Step 1: Register with your institutional email
+   - Step 2: Join or form a team with HSG and ETH students
+   - Step 3: Compete, and your record is verified and live
+
+4. CTA section (dark background #111111, white text):
+   Headline: "Ready to build your record?"
+   Button: "Register as a Student" — routes to /join/student
+
+---
+
+FOR SPONSORS PAGE (/for-sponsors)
+
+This page makes the case for why a company should sponsor BridgeUp.
+Sections:
+
+1. Hero
+   Headline: "Access the talent pipeline before everyone else."
+   Subheadline: "BridgeUp gives you direct access to verified, 
+   cross-disciplinary student teams from HSG and ETH Zurich — 
+   Europe's leading business and technical universities."
+   Tab bar at the top with two tabs: "For Students" and "For Sponsors" 
+   (active) — clicking For Students routes to /for-students.
+
+2. Value proposition — three cards in a row:
+   - Talent Access: "Engage with a curated pool of HSG business and ETH 
+     technical students before they enter the job market. Every profile 
+     is verified and recruiter-ready."
+   - Custom Challenges: "Design a competition format around your real 
+     business needs. Students deliver structured solutions — you get 
+     signal, not just CVs."
+   - Brand Visibility: "Your brand sits at the centre of a high-quality 
+     academic experience across two of Europe's most respected 
+     institutions."
+
+3. Sponsorship options — four cards:
+
+   Card 1 — 8-Hour Case Sprint
+   "A focused, fast-paced challenge. Teams receive your brief and 
+   deliver a structured solution within 8 hours. High energy, 
+   clear outputs."
+
+   Card 2 — 24-Hour Challenge
+   "An overnight format built for complexity. Teams have time to 
+   research, iterate, and present developed solutions. Suited for 
+   briefs that reward depth."
+
+   Card 3 — Custom Format
+   "Build a challenge around your exact needs. Duration, structure, 
+   judging criteria, and deliverables are designed with you directly."
+
+   Card 4 — Platform Naming Sponsorship
+   "Put your brand at the centre of BridgeUp. As a naming sponsor, 
+   your company is featured across the platform, in competition 
+   materials, and in all student-facing communications throughout 
+   the academic year. One slot available per year."
+
+4. CTA section (dark background #111111, white text):
+   Headline: "Interested in partnering with BridgeUp?"
+   Subheadline: "Tell us about your company and we will be in touch."
+   Button: "Express Interest" — anchor-scrolls to the form below
+
+5. Express interest form (anchor: #express-interest):
+   Fields: Company Name, Contact Name, Email, 
+   Sponsorship Option (dropdown: 8-Hour Sprint, 24-Hour Challenge, 
+   Custom Format, Platform Naming Sponsorship), Message
+   Submit button: "Send"
+   On submit: send an email to gfarruggio05@gmail.com via EmailJS 
+   with all field values. Show a success message inline — do not 
+   redirect.
+
+---
+
+JOIN PAGES
+
+/join/student:
+- Tab bar at top: "For Students" (active) | "For Sponsors"
+- Clicking "For Sponsors" tab routes to /join/sponsor
+- Registration form:
+  Full Name, Institutional Email (@student.unisg.ch or 
+  @student.ethz.ch only — reject any other domain with a clear 
+  error), Password, Confirm Password
+- Register button
+- Link below: "Already have an account? Log in"
+
+/join/sponsor:
+- Tab bar at top: "For Students" | "For Sponsors" (active)
+- Clicking "For Students" tab routes to /join/student
+- Short express interest form:
+  Company Name, Contact Name, Email, Message
+- Submit button: "Send"
+- On submit: send email to gfarruggio05@gmail.com via EmailJS
+- Show inline success message after submit
+
+---
+
+LANDING PAGE SECTIONS (in order)
+
+1. Hero
+   Headline: "Where HSG Meets ETH. Built for Recruiters."
+   Subheadline: "Verified cross-disciplinary project records for the 
+   next generation of talent."
+   Two CTAs: "Join as a Student" routes to /join/student (primary, 
+   accent red) and "Become a Sponsor" routes to /for-sponsors 
+   (secondary, outlined)
+   Background: perspective grid + aurora orbs + noise texture
+
+2. Marquee ticker
+   Scrolling strip: HSG × ETH · Verified Records · Recruiter-Facing · 
+   Case Competitions · Cross-Disciplinary Teams · Real Projects · 
+   Talent Infrastructure ·
+
+3. How It Works — 3 steps horizontal
+   Step 1: Form a team (HSG + ETH students)
+   Step 2: Compete in a sponsored challenge
+   Step 3: Your record is verified and visible to recruiters
+
+4. Stats bar (count-up on scroll)
+   12 competitions · 48 student teams · 6 sponsor companies · 
+   2 universities
+
+5. Competitions preview
+   3 most recent competitions as cards: name, sponsor, status badge 
+   (Active / Completed), prize amount
+   "View all competitions" link below
+
+6. Split CTA section — two columns side by side:
+   Left (light background): "Are you a student?" — brief line — 
+   button "Join as a Student" → /join/student
+   Right (dark background #111111, white text): "Are you a company?" 
+   — brief line — button "Become a Sponsor" → /for-sponsors
+
+7. Footer (dark background #111111, white text)
+   Logo, tagline, links to main pages, copyright
+
+---
+
+COMPETITION ENTRY REGISTRATION FLOW (/dashboard/enter)
+
+4-step form:
+
+Step 1: Competition pre-selected from URL param or dropdown
+
+Step 2: Team formation
+- Searchable dropdown to find and add teammates by name or email
+- Live slot indicators: HSG slots (max 2) and ETH slots (max 2)
+- Blocking logic: cannot submit a team violating the 2+2 structure
+
+Step 3: Entry details
+- One-line description (150 char limit, live counter)
+- Full description (800 char limit, live counter)
+- Deliverables field
+- Toggle: make entry recruiter-visible (on by default)
+
+Step 4: Review and submit
+- Full summary of team and entry
+- On submit: write to Firestore, redirect to /dashboard, 
+  show success toast
+
+---
+
+USER ROLES AND ACCESS
+
+Student:
+- Registers at /join/student with @student.unisg.ch or 
+  @student.ethz.ch only
+- Access: own dashboard, own competition entries, limited view of 
+  other student profiles (name, university, programme, skills, 
+  bio only)
+
+Sponsor:
+- Created manually by admin only
+- Access: full student profiles, all competition entries, rate and 
+  give feedback, sponsor dashboard
+
+Admin:
+- Hardcoded email: gfarruggio05@gmail.com
+- Access: everything
+- Floating demo toggle fixed bottom-right: switch between Student, 
+  Sponsor, and Admin view without logging out
+
+---
+
+FIRESTORE DATA
+
+Competitions — seed with three:
+
+1. HSG × ETH FinTech Challenge 2025
+   Completed · 6 teams · Sponsor: Helvetica Ventures
+   Winner: Team Aurex (Marc Hoffmann, Sophie Brenner, Luca Ferretti, 
+   Jana Kovač) · Prize: CHF 2,000 · Rating: 5/5
+
+2. Cross-Campus Sustainability Sprint 2025
+   Completed · 4 teams · Sponsor: Nordvik Impact Partners
+   Winner: Team Verdant (Anna Steiner, Felix Gruber, Mia Tanaka, 
+   Remy Dubois) · Prize: CHF 1,200 · Rating: 4/5
+
+3. HSG × ETH Venture Design Challenge 2025
+   Active · 0 teams · Sponsor: Helvetica Ventures
+   Prize: CHF 3,000 · Deadline: April 25 2025
+
+Students — seed with 12:
+Marc Hoffmann (HSG, MBF)
+Sophie Brenner (HSG, Strategy & Int'l Management)
+Anna Steiner (HSG, Accounting & Finance)
+Felix Gruber (HSG, Business Innovation)
+Thomas Wenger (HSG, Finance)
+Laura Meier (HSG, Marketing Management)
+Luca Ferretti (ETH, MSc Computer Science)
+Jana Kovač (ETH, MSc Data Science)
+Mia Tanaka (ETH, MSc Environmental Engineering)
+Remy Dubois (ETH, MSc Mechanical Engineering)
+Niklas Berg (ETH, MSc Robotics)
+Elena Vasquez (ETH, MSc Computational Biology)
+All students: approved = true. Team Aurex linked to competition 1. 
+Team Verdant linked to competition 2.
+
+---
+
+AUTHENTICATION
+
+- Institutional email validation on /join/student: only 
+  @student.unisg.ch and @student.ethz.ch accepted
+- Forgot password: 6-digit code sent by email
+- Admin: gfarruggio05@gmail.com hardcoded
+- Sponsors created by admin only
+
+---
+
+SCROLL BEHAVIOUR
+
+Every page navigation must scroll the window to the top instantly. 
+Implement as a ScrollToTop component inside the Router, placed 
+before the Navbar and Routes.
+
+---
+
+MOBILE RESPONSIVENESS
+
+Fully responsive throughout:
+- Single column layouts on mobile
+- Hamburger navigation
+- Cards stack vertically
+- Font sizes scale down proportionally
+- Touch targets minimum 44px height
+
+---
+
+QUALITY BAR
+
+The finished product must look and feel like a recruiter-grade 
+professional platform. No placeholder text, no lorem ipsum, no 
+missing pages. All interactions must work end to end.
