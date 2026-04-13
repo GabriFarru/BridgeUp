@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import LogoMark from "@/components/LogoMark";
 
 const navLinks = [
   { label: "How It Works", href: "/how-it-works" },
@@ -40,14 +41,7 @@ export default function Navbar() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between h-[68px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group" data-testid="link-logo">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BridgeUp logo">
-              <path d="M4 22 Q16 10 28 22" stroke="#E4002B" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-              <path d="M8 22 Q16 14 24 22" stroke="#1A1A1A" strokeWidth="2" fill="none" strokeLinecap="round"/>
-              <line x1="4" y1="22" x2="28" y2="22" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="10" y1="18" x2="10" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="16" y1="14.5" x2="16" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="22" y1="18" x2="22" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
+            <LogoMark size={34} />
             <span className="font-display text-[20px] font-semibold text-[#1A1A1A] tracking-tight">BridgeUp</span>
           </Link>
 

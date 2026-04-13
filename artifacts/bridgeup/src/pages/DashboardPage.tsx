@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Plus, Trophy, Clock, ChevronRight, LogOut, LayoutDashboard, Users, Settings } from "lucide-react";
+import LogoMark from "@/components/LogoMark";
 import { competitions, students, teams } from "@/data/seed";
 import DemoRoleSwitcher, { DemoRole } from "@/components/DemoRoleSwitcher";
 import { useState } from "react";
@@ -18,14 +19,7 @@ function Sidebar({ role, onRoleChange }: { role: DemoRole; onRoleChange: (r: Dem
     <aside className="hidden md:flex flex-col h-screen sticky top-0 bg-white border-r border-[#E0E0E0]" style={{ width: "240px", minWidth: "240px" }}>
       <div className="px-6 py-5 border-b border-[#E0E0E0]">
         <Link href="/" className="flex items-center gap-2.5">
-          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-            <path d="M4 22 Q16 10 28 22" stroke="#E4002B" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-            <path d="M8 22 Q16 14 24 22" stroke="#1A1A1A" strokeWidth="2" fill="none" strokeLinecap="round"/>
-            <line x1="4" y1="22" x2="28" y2="22" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round"/>
-            <line x1="10" y1="18" x2="10" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-            <line x1="16" y1="14.5" x2="16" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-            <line x1="22" y1="18" x2="22" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-          </svg>
+          <LogoMark size={28} />
           <span className="font-display text-[17px] font-semibold text-[#1A1A1A]">BridgeUp</span>
         </Link>
       </div>

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Eye, EyeOff } from "lucide-react";
+import LogoMark from "@/components/LogoMark";
 
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email"),
@@ -35,14 +36,7 @@ export default function LoginPage() {
       <div className="w-full max-w-[440px]">
         <div className="text-center mb-10">
           <Link href="/" className="inline-flex items-center justify-center gap-2.5 mb-8" data-testid="link-logo-login">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M4 22 Q16 10 28 22" stroke="#E4002B" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-              <path d="M8 22 Q16 14 24 22" stroke="#1A1A1A" strokeWidth="2" fill="none" strokeLinecap="round"/>
-              <line x1="4" y1="22" x2="28" y2="22" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="10" y1="18" x2="10" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="16" y1="14.5" x2="16" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="22" y1="18" x2="22" y2="22" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
+            <LogoMark size={38} />
             <span className="font-display text-[20px] font-semibold text-[#1A1A1A]">BridgeUp</span>
           </Link>
           <h1 className="font-display font-semibold text-[#1A1A1A] text-[30px] mb-2">Welcome back</h1>

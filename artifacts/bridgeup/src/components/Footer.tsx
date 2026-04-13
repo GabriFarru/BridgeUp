@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import LogoMark from "@/components/LogoMark";
 
 export default function Footer() {
   return (
@@ -8,14 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5">
-              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 22 Q16 10 28 22" stroke="#E4002B" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                <path d="M8 22 Q16 14 24 22" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                <line x1="4" y1="22" x2="28" y2="22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="10" y1="18" x2="10" y2="22" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="16" y1="14.5" x2="16" y2="22" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="22" y1="18" x2="22" y2="22" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
+              <LogoMark size={32} variant="dark" />
               <span className="font-display text-[18px] font-semibold text-white">BridgeUp</span>
             </Link>
             <p className="text-[14px] text-[rgba(255,255,255,0.5)] leading-relaxed max-w-[240px]">
