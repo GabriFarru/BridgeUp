@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import CompetitionCard from "@/components/CompetitionCard";
 import { competitions } from "@/data/seed";
 
-const heroWords = "Where HSG Meets ETH. Built for Recruiters.".split(" ");
+const heroWords = "Bridging the gap between students and companies".split(" ");
 
 function HeroHeadline() {
   return (
@@ -65,7 +65,7 @@ export default function LandingPage() {
                 animationDelay: `${heroWords.length * 80 + 100}ms`,
               }}
             >
-              Verified cross-disciplinary project records for the next generation of talent.
+              A Cross-Disciplinary Platform Where Talent Meets Opportunity
             </p>
             <div
               className="flex flex-wrap items-center gap-4"
