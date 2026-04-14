@@ -53,7 +53,7 @@ export default function LandingPage() {
         <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 w-full">
           <div className="max-w-[700px]">
             <div className="label-caps mb-6" style={{ color: "#E4002B", animationDelay: "0ms" }}>
-              HSG × ETH — Switzerland
+              Cross-University Collaboration
             </div>
             <HeroHeadline />
             <p
