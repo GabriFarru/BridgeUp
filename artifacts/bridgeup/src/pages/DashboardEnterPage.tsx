@@ -46,8 +46,9 @@ function Step2({ team, onChange, onNext, onBack }: {
   ).slice(0, 5);
 
   const canAdd = (student: typeof students[0]) => {
-    if (student.university === "HSG" && hsgMembers.length >= 2) return false;
-    if (student.university === "ETH" && ethMembers.length >= 2) return false;
+    if (team.length >= 4) return false;
+    if (student.university === "HSG" && hsgMembers.length >= 3) return false;
+    if (student.university === "ETH" && ethMembers.length >= 3) return false;
     return true;
   };
 
@@ -57,14 +58,15 @@ function Step2({ team, onChange, onNext, onBack }: {
     <div className="flex flex-col gap-6">
       <div className="grid grid-cols-2 gap-4">
         <div className="bridgeup-card rounded p-4 text-center">
-          <div className="font-display text-[32px] font-bold text-[#1A1A1A]">{hsgMembers.length}<span className="text-[#6B6B6B] text-[20px]">/2</span></div>
-          <div className="label-caps mt-1" style={{ color: "#2563EB" }}>HSG Slots</div>
+          <div className="font-display text-[32px] font-bold text-[#1A1A1A]">{hsgMembers.length}</div>
+          <div className="label-caps mt-1" style={{ color: "#2563EB" }}>HSG Members</div>
         </div>
         <div className="bridgeup-card rounded p-4 text-center">
-          <div className="font-display text-[32px] font-bold text-[#1A1A1A]">{ethMembers.length}<span className="text-[#6B6B6B] text-[20px]">/2</span></div>
-          <div className="label-caps mt-1" style={{ color: "#16A34A" }}>ETH Slots</div>
+          <div className="font-display text-[32px] font-bold text-[#1A1A1A]">{ethMembers.length}</div>
+          <div className="label-caps mt-1" style={{ color: "#16A34A" }}>ETH Members</div>
         </div>
       </div>
+      <p className="text-[12px] text-[#6B6B6B]">Teams can be 2+2, 3+1, or 2+1 — at least one member from each university, up to 4 total.</p>
 
       <div>
         <label className="label-caps mb-2 block">Search Students</label>
@@ -289,7 +291,7 @@ export default function DashboardEnterPage() {
                   <div>
                     <span className="label-caps block mb-1">Competition</span>
                     <p className="text-[#1A1A1A] font-medium text-[15px]">{comp?.name}</p>
-                    <p className="text-[#6B6B6B] text-[13px]">{comp?.sponsor} · {comp?.prize}</p>
+                    <p className="text-[#6B6B6B] text-[13px]">{comp?.sponsor}</p>
                   </div>
                   <hr className="section-divider" />
                   <div>

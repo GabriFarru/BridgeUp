@@ -4,7 +4,6 @@ export const competitions = [
     name: "HSG × ETH FinTech Challenge 2025",
     sponsor: "Helvetica Ventures",
     status: "Completed",
-    prize: "CHF 2,000",
     teams: 6,
     winner: "Team Aurex"
   },
@@ -13,7 +12,6 @@ export const competitions = [
     name: "Cross-Campus Sustainability Sprint 2025",
     sponsor: "Nordvik Impact Partners",
     status: "Completed",
-    prize: "CHF 1,200",
     teams: 4,
     winner: "Team Verdant"
   },
@@ -22,7 +20,6 @@ export const competitions = [
     name: "HSG × ETH Venture Design Challenge 2025",
     sponsor: "Helvetica Ventures",
     status: "Active",
-    prize: "CHF 3,000",
     teams: 0,
     deadline: "April 25, 2025"
   }
@@ -44,6 +41,6 @@ export const students = [
 ];
 
 export const teams = [
-  { id: "aurex", name: "Team Aurex", competitionId: "1", members: ["1","2","7","8"], prize: "CHF 2,000 — Winner" },
-  { id: "verdant", name: "Team Verdant", competitionId: "2", members: ["3","4","9","10"], prize: "CHF 1,200 — Winner" }
+  { id: "aurex", name: "Team Aurex", competitionId: "1", members: ["1","2","7","8"], result: "Winner" },
+  { id: "verdant", name: "Team Verdant", competitionId: "2", members: ["3","4","9","10"], result: "Winner" }
 ];

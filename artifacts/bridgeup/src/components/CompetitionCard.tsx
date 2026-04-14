@@ -6,7 +6,6 @@ interface Competition {
   name: string;
   sponsor: string;
   status: string;
-  prize: string;
   teams: number;
   winner?: string;
   deadline?: string;
@@ -43,20 +42,20 @@ export default function CompetitionCard({ competition, linkable = true }: Compet
 
       <div className="grid grid-cols-2 gap-4 mt-auto">
         <div className="flex items-center gap-2">
-          <Trophy size={14} className="text-[#6B6B6B]" />
-          <span className="text-[14px] text-[#1A1A1A] font-medium">{competition.prize}</span>
+          <Users size={14} className="text-[#6B6B6B]" />
+          <span className="text-[13px] text-[#6B6B6B]">{competition.teams > 0 ? `${competition.teams} teams` : "Open"}</span>
         </div>
         {competition.deadline ? (
           <div className="flex items-center gap-2">
             <Calendar size={14} className="text-[#6B6B6B]" />
             <span className="text-[13px] text-[#6B6B6B]">{competition.deadline}</span>
           </div>
-        ) : (
+        ) : competition.winner ? (
           <div className="flex items-center gap-2">
-            <Users size={14} className="text-[#6B6B6B]" />
-            <span className="text-[13px] text-[#6B6B6B]">{competition.teams} teams</span>
+            <Trophy size={14} className="text-[#E4002B]" />
+            <span className="text-[13px] text-[#E4002B] font-medium">{competition.winner}</span>
           </div>
-        )}
+        ) : null}
       </div>
 
       {competition.winner && (

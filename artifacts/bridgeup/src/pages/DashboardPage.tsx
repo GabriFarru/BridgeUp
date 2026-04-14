@@ -124,7 +124,7 @@ export default function DashboardPage() {
                       <div>
                         <p className="font-semibold text-[#1A1A1A] text-[15px]">{comp.name}</p>
                         <p className="text-[13px] text-[#6B6B6B]">{team.name} · {comp.sponsor}</p>
-                        <p className="text-[12px] text-[#E4002B] font-medium mt-1">{team.prize}</p>
+                        <p className="text-[12px] text-[#E4002B] font-medium mt-1">{team.result}</p>
                       </div>
                     </div>
                     <ChevronRight size={16} className="text-[#6B6B6B] shrink-0" />
@@ -148,7 +148,7 @@ export default function DashboardPage() {
                       <Clock size={13} className="text-[#6B6B6B] mt-1 shrink-0" />
                       <div>
                         <p className="font-medium text-[#1A1A1A] text-[14px]">{comp.name}</p>
-                        <p className="text-[12px] text-[#6B6B6B]">{team.name} · {team.prize}</p>
+                        <p className="text-[12px] text-[#6B6B6B]">{team.name} · {team.result}</p>
                       </div>
                     </div>
                   </div>

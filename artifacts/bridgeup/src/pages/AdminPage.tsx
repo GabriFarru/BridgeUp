@@ -144,7 +144,7 @@ export default function AdminPage() {
                           {comp.status}
                         </span>
                       </div>
-                      <p className="text-[12px] text-[#6B6B6B]">{comp.sponsor} · {comp.prize} · {comp.teams} teams</p>
+                      <p className="text-[12px] text-[#6B6B6B]">{comp.sponsor} · {comp.teams} teams</p>
                     </div>
                     <button className="text-[13px] font-medium text-[#6B6B6B] hover:text-[#E4002B] transition-colors px-3 py-1.5 rounded border border-[#E0E0E0]" data-testid={`btn-edit-comp-${comp.id}`}>
                       Edit

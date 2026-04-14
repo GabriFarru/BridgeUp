@@ -66,7 +66,7 @@ export default function CompetitionDetailPage() {
                 <div>
                   <div className="label-caps mb-4" style={{ color: "#6B6B6B" }}>About</div>
                   <p className="text-[#6B6B6B] text-[16px] leading-relaxed">
-                    A rigorous cross-disciplinary challenge bringing together HSG business students and ETH Zurich engineers to tackle real-world problems. Participants form verified 2+2 teams and deliver structured solutions under time pressure.
+                    A rigorous cross-disciplinary challenge bringing together HSG business students and ETH Zurich engineers to tackle real-world problems. Participants form verified cross-disciplinary teams and deliver structured solutions under time pressure.
                   </p>
                 </div>
               </ScrollReveal>
@@ -106,9 +106,11 @@ export default function CompetitionDetailPage() {
                                 );
                               })}
                             </div>
-                            <div className="mt-4 pt-4 border-t border-[#E0E0E0]">
-                              <span className="text-[13px] text-[#6B6B6B]">Prize: <span className="text-[#1A1A1A] font-medium">{team.prize}</span></span>
-                            </div>
+                            {competition.winner === team.name && (
+                              <div className="mt-4 pt-4 border-t border-[#E0E0E0]">
+                                <span className="text-[13px] text-[#6B6B6B]">Result: <span className="text-[#E4002B] font-medium">Winner</span></span>
+                              </div>
+                            )}
                           </div>
                         );
                       })}
@@ -144,13 +146,6 @@ export default function CompetitionDetailPage() {
                     <div>
                       <div className="text-[12px] text-[#6B6B6B]">Sponsor</div>
                       <div className="text-[14px] font-medium text-[#1A1A1A]">{competition.sponsor}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Trophy size={16} className="text-[#6B6B6B]" />
-                    <div>
-                      <div className="text-[12px] text-[#6B6B6B]">Prize Pool</div>
-                      <div className="text-[14px] font-medium text-[#1A1A1A]">{competition.prize}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

@@ -90,7 +90,7 @@ export default function SponsorDashboardPage() {
                           {comp.status}
                         </span>
                       </div>
-                      <p className="text-[13px] text-[#6B6B6B]">{compTeams.length} teams · {comp.prize}</p>
+                      <p className="text-[13px] text-[#6B6B6B]">{compTeams.length} teams</p>
                     </div>
                     <ArrowRight size={16} className="text-[#6B6B6B] shrink-0" />
                   </Link>
