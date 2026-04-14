@@ -6,10 +6,11 @@ export const competitions = [
     status: "Completed",
     teams: 6,
     winner: "Team Aurex",
+    duration: "24 hours",
     brief: [
-      "Helvetica Ventures challenged teams to design a data-driven credit risk assessment framework for underserved SMEs across Switzerland and the broader DACH region. Traditional scoring models rely heavily on historical financial statements, leaving fast-growing startups and sole proprietorships without reliable access to growth capital.",
-      "Teams were tasked with leveraging alternative data sources — including transaction metadata, supply chain signals, and digital platform activity — to build a more inclusive and accurate creditworthiness model. Deliverables included a technical architecture, a go-to-market strategy, and a regulatory compliance framework aligned with Swiss FINMA guidelines.",
-      "The winning team, Team Aurex, proposed a modular API-first scoring engine that integrates directly into the loan origination systems of cantonal banks, reducing manual underwriting time by an estimated 60% while expanding SME lending eligibility by 35%."
+      "Helvetica Ventures provided teams with a 20-page information memorandum on a portfolio company — a B2B payments startup targeting Swiss and German SMEs — that was preparing for its Series B fundraise. Teams were given 24 hours to act as junior analysts at the investment committee.",
+      "Each team was asked to evaluate the startup's competitive positioning in the SME payments landscape, build a simplified 3-year financial model using provided revenue and cost assumptions, identify the top three investment risks with proposed mitigations, and deliver a 10-minute go/no-go recommendation to a panel of Helvetica Ventures partners.",
+      "Team Aurex stood out for the clarity of their risk framework and a compelling scenario analysis showing how the startup could reach profitability under three macro conditions. Their presentation was described by the jury as 'investment-ready with no senior editing required.'"
     ]
   },
   {
@@ -19,10 +20,11 @@ export const competitions = [
     status: "Completed",
     teams: 4,
     winner: "Team Verdant",
+    duration: "8 hours",
     brief: [
-      "Nordvik Impact Partners invited teams to develop a Scope 3 emissions monitoring and reporting solution for mid-market Swiss industrial companies. With the Swiss Climate Act and incoming EU CSRD requirements tightening disclosure obligations, many firms lack the technical infrastructure to measure indirect supply chain emissions at the granularity now required by regulators and institutional investors.",
-      "Teams combined environmental engineering expertise from ETH with strategy and finance knowledge from HSG to design a scalable SaaS platform — covering data ingestion from logistics and procurement partners, automated categorisation under GHG Protocol standards, and an investor-grade sustainability dashboard with audit trail functionality.",
-      "Team Verdant's solution introduced a supplier self-reporting portal with pre-filled emission factors sourced from the ecoinvent database, reducing manual data collection effort by over 70% and enabling quarterly CSRD-compliant reporting at a fraction of the cost of existing enterprise tools."
+      "Nordvik Impact Partners gave teams an 8-hour sprint to evaluate three early-stage social ventures from their live deal pipeline. The three candidates were a solar energy cooperative in rural Graubünden, a digital platform connecting supermarkets with food banks to redirect surplus stock, and an urban vertical farming startup based in Zurich.",
+      "Teams received a one-page summary and a basic financial projection for each venture. Using a simplified impact scorecard provided by Nordvik — covering social reach, financial sustainability, scalability, and mission alignment — teams had to recommend which single venture Nordvik should fund and at what terms.",
+      "Team Verdant recommended the food bank platform, making a compelling case that it offered the highest measurable social impact per franc invested, a clear path to revenue independence within 18 months, and the strongest alignment with Nordvik's urban poverty reduction mandate. Their recommendation was adopted by Nordvik's investment committee the following week."
     ]
   },
   {
@@ -32,6 +34,7 @@ export const competitions = [
     status: "Active",
     teams: 0,
     deadline: "April 25, 2025",
+    duration: "2 weeks",
     brief: [
       "Helvetica Ventures has presented teams with an open brief to design and validate a go-to-market strategy for a B2B deep-tech venture operating at the intersection of AI and clinical diagnostics. The challenge asks teams to identify a beachhead market within the EU medical device landscape, size the commercial opportunity, and design a credible regulatory pathway under MDR 2017/745.",
       "Teams must synthesise technical product understanding from ETH engineers with commercial rigour from HSG strategists. The final deliverable is an investor-ready market entry deck covering competitive positioning, a distribution model, a 36-month revenue plan, and a risk register — to be presented directly to the Helvetica Ventures investment committee.",

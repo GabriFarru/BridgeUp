@@ -1,5 +1,5 @@
 import { useParams, Link } from "wouter";
-import { ArrowLeft, Trophy, Users, Calendar, Building } from "lucide-react";
+import { ArrowLeft, Trophy, Users, Calendar, Building, Clock } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { competitions, students, teams } from "@/data/seed";
 
@@ -157,6 +157,15 @@ export default function CompetitionDetailPage() {
                       <div className="text-[14px] font-medium text-[#1A1A1A]">{competition.teams}</div>
                     </div>
                   </div>
+                  {competition.duration && (
+                    <div className="flex items-center gap-3">
+                      <Clock size={16} className="text-[#6B6B6B]" />
+                      <div>
+                        <div className="text-[12px] text-[#6B6B6B]">Duration</div>
+                        <div className="text-[14px] font-medium text-[#1A1A1A]">{competition.duration}</div>
+                      </div>
+                    </div>
+                  )}
                   {competition.deadline && (
                     <div className="flex items-center gap-3">
                       <Calendar size={16} className="text-[#6B6B6B]" />
