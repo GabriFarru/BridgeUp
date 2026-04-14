@@ -34,8 +34,8 @@ const caseFormats = [
     desc: "An overnight format that allows teams to go deeper: structured research, stakeholder mapping, and a fully developed recommendation delivered the following morning.",
   },
   {
-    label: "Multi-Week Engagement",
-    desc: "A project-style format spanning two to four weeks. Teams conduct primary research, iterate on solutions, and present a client-ready deliverable to a judging panel.",
+    label: "Custom Engagement",
+    desc: "A tailored format of up to two days, structured around your specific needs. You define the scope and timeline; we design the competition around it.",
   },
 ];
 
