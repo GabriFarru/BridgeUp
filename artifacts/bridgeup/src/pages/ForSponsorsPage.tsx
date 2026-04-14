@@ -147,7 +147,7 @@ export default function ForSponsorsPage() {
           <ScrollReveal>
             <div className="label-caps mb-5" style={{ color: "#E4002B" }}>For Companies</div>
             <h1 className="font-display font-semibold text-[#1A1A1A] mb-6" style={{ fontSize: "clamp(36px, 6vw, 60px)", maxWidth: "700px", lineHeight: 1.1 }}>
-              Your next hire is already solving your problems.
+              Your problems solved by the next generation.
             </h1>
             <p className="text-[#6B6B6B] leading-relaxed mb-10" style={{ fontSize: "clamp(16px, 2vw, 18px)", maxWidth: "560px" }}>
               BridgeUp gives you direct access to verified, cross-disciplinary student teams from HSG and ETH Zurich — Europe's leading business and technical universities.

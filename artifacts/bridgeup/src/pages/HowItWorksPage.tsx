@@ -119,7 +119,7 @@ export default function HowItWorksPage() {
             <ScrollReveal delay={100}>
               <div className="bridgeup-card rounded p-8 flex flex-col gap-5 h-full">
                 <div className="label-caps" style={{ color: "#6B6B6B" }}>For Sponsors</div>
-                <h3 className="font-display font-semibold text-[#1A1A1A] text-[22px]">Your next hire is already solving your problems.</h3>
+                <h3 className="font-display font-semibold text-[#1A1A1A] text-[22px]">Your problems solved by the next generation.</h3>
                 <div className="flex flex-col gap-3">
                   {sponsorValues.map((val, i) => (
                     <div key={i} className="flex items-start gap-3">
