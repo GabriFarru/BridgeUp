@@ -2,15 +2,15 @@ export const competitions = [
   {
     id: "1",
     name: "HSG × ETH FinTech Challenge 2025",
-    sponsor: "Helvetica Ventures",
+    sponsor: "Montfort Private Bank",
     status: "Completed",
     teams: 6,
     winner: "Team Aurex",
     duration: "24 hours",
     brief: [
-      "Helvetica Ventures brought teams in as junior consultants to advise a Swiss private bank (CHF 8bn AUM) that was consistently losing high-net-worth clients under 40 to digital-first competitors. Teams received a client brief including current onboarding process maps, drop-off data at each stage, an NPS breakdown by client segment, and a competitive benchmarking report covering four European challengers.",
-      "Each team had 24 hours to diagnose the root causes of attrition, redesign the onboarding journey end-to-end, define the technical requirements for implementation — with ETH students leading the systems architecture component — and present a phased rollout plan with a 24-month ROI projection to a senior Helvetica Ventures partner panel.",
-      "Team Aurex's solution — a modular onboarding portal with embedded e-KYC, integrated portfolio risk profiling, and a structured relationship manager handoff at a defined client milestone — was selected as the winning approach for combining depth of client experience with a credible and costed path to production."
+      "Montfort Private Bank engaged teams to help redesign its onboarding experience for a new generation of younger high-net-worth clients — a segment it was consistently losing to digital-first competitors. Teams received a client brief with current onboarding process maps, drop-off data at each stage, NPS scores by client segment, and a short benchmarking overview of four European competitors.",
+      "Each team had 24 hours to identify where the experience was falling short, propose a redesigned onboarding flow that would work for clients under 40, and outline the key product and organisational changes needed to make it happen. The proposal had to include a simple cost-benefit argument to support a board-level decision.",
+      "Team Aurex proposed a streamlined digital onboarding flow that cut time-to-first-investment from eleven days to under 72 hours, alongside a revised first-call framework for relationship managers. The jury praised the submission as clear, commercially grounded, and immediately actionable without requiring a full technology overhaul."
     ]
   },
   {
