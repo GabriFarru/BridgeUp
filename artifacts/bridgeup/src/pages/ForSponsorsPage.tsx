@@ -27,23 +27,13 @@ const valueProps = [
 const sponsorshipOptions = [
   {
     icon: <Zap size={20} className="text-[#E4002B]" />,
-    title: "8-Hour Case Sprint",
-    desc: "A focused, fast-paced challenge. Teams receive your brief and deliver a structured solution within 8 hours. High energy, clear outputs.",
-  },
-  {
-    icon: <Award size={20} className="text-[#E4002B]" />,
-    title: "24-Hour Challenge",
-    desc: "An overnight format built for complexity. Teams have time to research, iterate, and present developed solutions. Suited for briefs that reward depth.",
-  },
-  {
-    icon: <Target size={20} className="text-[#E4002B]" />,
-    title: "Custom Format",
-    desc: "Build a challenge around your exact needs. Duration, structure, judging criteria, and deliverables are designed with you directly.",
+    title: "Case Competition Sponsorship",
+    desc: "Design a real consulting brief and bring it to a cohort of cross-disciplinary HSG and ETH teams. Choose your format — 8-hour sprint, 24-hour challenge, or a custom multi-week engagement. You define the problem; students deliver structured solutions.",
   },
   {
     icon: <Globe size={20} className="text-[#E4002B]" />,
     title: "Platform Naming Sponsorship",
-    desc: "Put your brand at the centre of BridgeUp. As a naming sponsor, your company is featured across the platform, in competition materials, and in all student-facing communications throughout the academic year. One slot available per year.",
+    desc: "Put your brand at the centre of BridgeUp. As the naming sponsor, your company is featured across the platform, in all competition materials, and in every student-facing communication throughout the academic year. One slot available per year.",
     featured: true,
   },
 ];
@@ -113,9 +103,7 @@ function ExpressInterestForm() {
         <label className="label-caps mb-2 block">Sponsorship Option</label>
         <select {...register("sponsorshipOption")} className={inputClass} data-testid="select-sponsorship-option">
           <option value="">Select an option</option>
-          <option value="8-hour-sprint">8-Hour Case Sprint</option>
-          <option value="24-hour-challenge">24-Hour Challenge</option>
-          <option value="custom-format">Custom Format</option>
+          <option value="case-competition">Case Competition Sponsorship</option>
           <option value="platform-naming">Platform Naming Sponsorship</option>
         </select>
         {errors.sponsorshipOption && <p className="text-[#E4002B] text-[12px] mt-1">{errors.sponsorshipOption.message}</p>}

@@ -8,6 +8,7 @@ const formSchema = z.object({
   companyName: z.string().min(1, "Company name is required"),
   contactName: z.string().min(1, "Contact name is required"),
   email: z.string().email("Please enter a valid email"),
+  sponsorshipOption: z.string().min(1, "Please select a sponsorship option"),
   message: z.string().min(10, "Please provide a brief message"),
 });
 type FormValues = z.infer<typeof formSchema>;
@@ -80,6 +81,15 @@ export default function JoinSponsorPage() {
                   <label className="label-caps mb-2 block">Email</label>
                   <input {...register("email")} type="email" className={inputClass} placeholder="anna@helvetica.vc" data-testid="input-email" />
                   {errors.email && <p className="text-[#E4002B] text-[12px] mt-1">{errors.email.message}</p>}
+                </div>
+                <div>
+                  <label className="label-caps mb-2 block">Sponsorship Option</label>
+                  <select {...register("sponsorshipOption")} className={inputClass} data-testid="select-sponsorship-option">
+                    <option value="">Select an option</option>
+                    <option value="case-competition">Case Competition Sponsorship</option>
+                    <option value="platform-naming">Platform Naming Sponsorship</option>
+                  </select>
+                  {errors.sponsorshipOption && <p className="text-[#E4002B] text-[12px] mt-1">{errors.sponsorshipOption.message}</p>}
                 </div>
                 <div>
                   <label className="label-caps mb-2 block">Message</label>
