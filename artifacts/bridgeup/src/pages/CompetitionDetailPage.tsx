@@ -65,9 +65,11 @@ export default function CompetitionDetailPage() {
               <ScrollReveal>
                 <div>
                   <div className="label-caps mb-4" style={{ color: "#6B6B6B" }}>About</div>
-                  <p className="text-[#6B6B6B] text-[16px] leading-relaxed">
-                    A rigorous cross-disciplinary challenge bringing together HSG business students and ETH Zurich engineers to tackle real-world problems. Participants form verified cross-disciplinary teams and deliver structured solutions under time pressure.
-                  </p>
+                  <div className="flex flex-col gap-4">
+                    {(competition.brief ?? []).map((para, i) => (
+                      <p key={i} className="text-[#6B6B6B] text-[16px] leading-relaxed">{para}</p>
+                    ))}
+                  </div>
                 </div>
               </ScrollReveal>
 
