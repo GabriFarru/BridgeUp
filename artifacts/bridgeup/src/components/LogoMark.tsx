@@ -8,7 +8,7 @@ export default function LogoMark({ size = 36, variant = "light" }: LogoMarkProps
 
   return (
     <img
-      src="/logo.png"
+      src={variant === "dark" ? "/logo-dark.png" : "/logo.png"}
       alt="BridgeUp logo"
       width={size}
       height={height}
@@ -16,7 +16,6 @@ export default function LogoMark({ size = 36, variant = "light" }: LogoMarkProps
         objectFit: "contain",
         display: "block",
         flexShrink: 0,
-        filter: variant === "dark" ? "brightness(0) invert(1)" : "none",
       }}
     />
   );
