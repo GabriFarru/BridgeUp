@@ -8,11 +8,13 @@ type Filter = "all" | "active" | "completed";
 export default function CompetitionsPage() {
   const [filter, setFilter] = useState<Filter>("all");
 
-  const filtered = competitions.filter(c => {
-    if (filter === "all") return true;
-    if (filter === "active") return c.status === "Active";
-    return c.status === "Completed";
-  });
+  const filtered = [...competitions]
+    .sort((a, b) => (a.status === "Active" ? -1 : 1) - (b.status === "Active" ? -1 : 1))
+    .filter(c => {
+      if (filter === "all") return true;
+      if (filter === "active") return c.status === "Active";
+      return c.status === "Completed";
+    });
 
   const tabs: { value: Filter; label: string }[] = [
     { value: "all", label: "All" },
