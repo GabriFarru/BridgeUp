@@ -11,12 +11,12 @@ const platformSteps = [
   {
     num: "02",
     title: "Teams Form",
-    desc: "Each team comprises two HSG students and two ETH students. The structure is enforced — so every record reflects genuine cross-disciplinary collaboration.",
+    desc: "Each team is mixed between students of the two institutions. The structure is enforced — so every record reflects genuine cross-disciplinary collaboration.",
   },
   {
     num: "03",
     title: "Competitions Run",
-    desc: "Sponsors design briefs. Teams compete over 8 hours, 24 hours, or a custom format. Deliverables are structured and evaluated.",
+    desc: "BridgeUp and sponsors co-design the briefs. Teams compete over 8 hours, 24 hours, or a custom format. Deliverables are structured and evaluated.",
   },
   {
     num: "04",
@@ -31,16 +31,16 @@ const platformSteps = [
 ];
 
 const studentValues = [
-  "Verified competition entries tied to your institutional identity",
-  "Cross-disciplinary team records (HSG + ETH)",
-  "Recruiter-facing profiles structured for hiring decisions",
-  "Real briefs from real sponsors",
+  "Real consulting briefs from companies with actual challenges to solve",
+  "Direct interaction with executives, professionals, and recruiters",
+  "Structured feedback from industry experts on your work",
+  "Cross-disciplinary collaboration with students from HSG and ETH",
 ];
 
 const sponsorValues = [
   "Direct engagement with Europe's top business and technical students",
   "Structured challenge formats (8h, 24h, or custom)",
-  "Verified talent profiles — not just CVs",
+  "In-person assessment of real outputs and problem-solving under pressure",
   "Brand presence across both institutions",
 ];
 
@@ -56,51 +56,9 @@ export default function HowItWorksPage() {
               How BridgeUp Works
             </h1>
             <p className="text-[#6B6B6B] leading-relaxed" style={{ fontSize: "clamp(16px, 2vw, 18px)", maxWidth: "540px" }}>
-              BridgeUp is the infrastructure layer that makes cross-disciplinary student work visible, verifiable, and valuable to the people who hire.
+              BridgeUp connects HSG and ETH students with real company challenges — and gives sponsors direct access to how the best emerging talent thinks, works, and delivers under pressure.
             </p>
           </ScrollReveal>
-        </div>
-      </section>
-
-      <hr className="section-divider" />
-
-      {/* The Problem */}
-      <section style={{ padding: "100px 0" }}>
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <ScrollReveal>
-              <div className="label-caps mb-4" style={{ color: "#6B6B6B" }}>The Problem</div>
-              <h2 className="font-display font-semibold text-[#1A1A1A] mb-6" style={{ fontSize: "clamp(26px, 3.5vw, 36px)" }}>
-                The best cross-disciplinary work disappears.
-              </h2>
-              <p className="text-[#6B6B6B] text-[16px] leading-relaxed mb-4">
-                LinkedIn was built for resumes. GitHub was built for code. Neither captures the collaborative work that happens when an HSG strategist and an ETH engineer solve a real problem together.
-              </p>
-              <p className="text-[#6B6B6B] text-[16px] leading-relaxed">
-                The presentation ends. The record doesn't exist. The signal is lost.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <div className="bridgeup-card rounded p-8">
-                <div className="label-caps mb-6" style={{ color: "#6B6B6B" }}>What's Missing</div>
-                <div className="flex flex-col gap-4">
-                  {[
-                    "A verified record of who built what, with whom",
-                    "Cross-disciplinary collaboration as a credentialed signal",
-                    "Recruiter-ready profiles tied to institutional identity",
-                    "A layer between university and the job market",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[rgba(228,0,43,0.08)] flex items-center justify-center shrink-0 mt-0.5">
-                        <div className="w-2 h-2 rounded-full bg-[#E4002B]" />
-                      </div>
-                      <p className="text-[#1A1A1A] text-[15px]">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 
@@ -110,7 +68,7 @@ export default function HowItWorksPage() {
       <section style={{ padding: "100px 0" }}>
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
           <ScrollReveal>
-            <div className="label-caps mb-4" style={{ color: "#E4002B" }}>The Solution</div>
+            <div className="label-caps mb-4" style={{ color: "#E4002B" }}>The Model</div>
             <h2 className="font-display font-semibold text-[#1A1A1A] mb-16" style={{ fontSize: "clamp(28px, 4vw, 40px)" }}>
               Five steps from collaboration to record.
             </h2>
@@ -144,7 +102,7 @@ export default function HowItWorksPage() {
             <ScrollReveal>
               <div className="bridgeup-card rounded p-8 flex flex-col gap-5 h-full">
                 <div className="label-caps" style={{ color: "#E4002B" }}>For Students</div>
-                <h3 className="font-display font-semibold text-[#1A1A1A] text-[22px]">Build a record that follows you.</h3>
+                <h3 className="font-display font-semibold text-[#1A1A1A] text-[22px]">Real exposure to the business world.</h3>
                 <div className="flex flex-col gap-3">
                   {studentValues.map((val, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -161,7 +119,7 @@ export default function HowItWorksPage() {
             <ScrollReveal delay={100}>
               <div className="bridgeup-card rounded p-8 flex flex-col gap-5 h-full">
                 <div className="label-caps" style={{ color: "#6B6B6B" }}>For Sponsors</div>
-                <h3 className="font-display font-semibold text-[#1A1A1A] text-[22px]">Find talent before the market does.</h3>
+                <h3 className="font-display font-semibold text-[#1A1A1A] text-[22px]">Assess real skills on your real problems.</h3>
                 <div className="flex flex-col gap-3">
                   {sponsorValues.map((val, i) => (
                     <div key={i} className="flex items-start gap-3">
