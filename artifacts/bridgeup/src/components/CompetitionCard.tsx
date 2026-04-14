@@ -37,7 +37,7 @@ export default function CompetitionCard({ competition, linkable = true }: Compet
 
       <div className="flex flex-col gap-2">
         <span className="label-caps text-[#6B6B6B]">Sponsor</span>
-        <span className="text-[15px] text-[#1A1A1A] font-medium">{competition.sponsor}</span>
+        <span className="text-[15px] text-[#E4002B] font-medium">{competition.sponsor}</span>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mt-auto">
