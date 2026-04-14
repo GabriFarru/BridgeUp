@@ -14,8 +14,8 @@ const valueProps = [
   },
   {
     icon: <Zap size={22} className="text-[#E4002B]" />,
-    title: "Custom Challenges",
-    desc: "Design a competition format around your real business needs. Students deliver structured solutions — you get signal, not just CVs.",
+    title: "Real Solutions, Fresh Perspective",
+    desc: "Pose an actual firm challenge — not a hypothetical. Cross-disciplinary student teams deliver structured, actionable solutions grounded in real business logic, backed by the kind of lateral thinking that only comes from outside the organisation.",
   },
   {
     icon: <Globe size={22} className="text-[#E4002B]" />,
@@ -24,17 +24,18 @@ const valueProps = [
   },
 ];
 
-const sponsorshipOptions = [
+const caseFormats = [
   {
-    icon: <Zap size={20} className="text-[#E4002B]" />,
-    title: "Case Competition Sponsorship",
-    desc: "Design a real consulting brief and bring it to a cohort of cross-disciplinary HSG and ETH teams. Choose your format — 8-hour sprint, 24-hour challenge, or a custom multi-week engagement. You define the problem; students deliver structured solutions.",
+    label: "8-Hour Sprint",
+    desc: "An intensive same-day challenge. Teams receive the brief at 9 am and present by 5 pm — ideal for gauging rapid analytical thinking and prioritisation under pressure.",
   },
   {
-    icon: <Globe size={20} className="text-[#E4002B]" />,
-    title: "Platform Naming Sponsorship",
-    desc: "Put your brand at the centre of BridgeUp. As the naming sponsor, your company is featured across the platform, in all competition materials, and in every student-facing communication throughout the academic year. One slot available per year.",
-    featured: true,
+    label: "24-Hour Challenge",
+    desc: "An overnight format that allows teams to go deeper: structured research, stakeholder mapping, and a fully developed recommendation delivered the following morning.",
+  },
+  {
+    label: "Multi-Week Engagement",
+    desc: "A project-style format spanning two to four weeks. Teams conduct primary research, iterate on solutions, and present a client-ready deliverable to a judging panel.",
   },
 ];
 
@@ -200,28 +201,44 @@ export default function ForSponsorsPage() {
               Choose your format.
             </h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sponsorshipOptions.map((opt, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div
-                  className="bridgeup-card rounded p-8 flex flex-col gap-4 h-full"
-                  style={opt.featured ? { borderColor: "#E4002B", borderWidth: "1px", borderLeftWidth: "3px" } : {}}
-                  data-testid={`sponsorship-option-${i}`}
-                >
-                  {opt.featured && (
-                    <span className="label-caps text-[#E4002B] text-[11px]">Premium — One Slot Per Year</span>
-                  )}
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-9 h-9 rounded bg-[rgba(228,0,43,0.06)]">
-                      {opt.icon}
-                    </div>
-                    <h3 className="font-display font-semibold text-[#1A1A1A]" style={{ fontSize: "19px" }}>{opt.title}</h3>
-                  </div>
-                  <p className="text-[#6B6B6B] text-[15px] leading-relaxed">{opt.desc}</p>
+
+          {/* Case Competition Sponsorship */}
+          <ScrollReveal>
+            <div className="bridgeup-card rounded p-8 md:p-10 mb-6" data-testid="sponsorship-option-0">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center justify-center w-9 h-9 rounded bg-[rgba(228,0,43,0.06)]">
+                  <Zap size={20} className="text-[#E4002B]" />
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                <h3 className="font-display font-semibold text-[#1A1A1A]" style={{ fontSize: "20px" }}>Case Competition Sponsorship</h3>
+              </div>
+              <p className="text-[#6B6B6B] text-[15px] leading-relaxed mb-8" style={{ maxWidth: "680px" }}>
+                Design a real consulting brief and bring it to a cohort of cross-disciplinary HSG and ETH teams. You define the firm problem; students deliver structured, client-ready solutions. Choose the format that fits your timeline.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {caseFormats.map((fmt, i) => (
+                  <div key={i} className="rounded p-5 flex flex-col gap-2" style={{ background: "#F7F7F7", borderLeft: "3px solid #E4002B" }}>
+                    <span className="label-caps text-[#E4002B] text-[11px]">{fmt.label}</span>
+                    <p className="text-[#6B6B6B] text-[13px] leading-relaxed">{fmt.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Platform Naming Sponsorship */}
+          <ScrollReveal delay={100}>
+            <div className="bridgeup-card rounded p-8 md:p-10" style={{ borderColor: "#E4002B", borderWidth: "1px", borderLeftWidth: "3px" }} data-testid="sponsorship-option-1">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center justify-center w-9 h-9 rounded bg-[rgba(228,0,43,0.06)]">
+                  <Globe size={20} className="text-[#E4002B]" />
+                </div>
+                <h3 className="font-display font-semibold text-[#1A1A1A]" style={{ fontSize: "20px" }}>Platform Naming Sponsorship</h3>
+              </div>
+              <p className="text-[#6B6B6B] text-[15px] leading-relaxed" style={{ maxWidth: "680px" }}>
+                Put your brand at the centre of BridgeUp. As the naming sponsor, your company is featured across the platform, in all competition materials, and in every student-facing communication throughout the academic year. One slot available per year.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
