@@ -15,7 +15,7 @@ const valueProps = [
   {
     icon: <Zap size={22} className="text-[#E4002B]" />,
     title: "Real Solutions, Fresh Perspective",
-    desc: "Pose an actual firm challenge — not a hypothetical. Cross-disciplinary student teams deliver structured, actionable solutions grounded in real business logic, backed by the kind of lateral thinking that only comes from outside the organisation.",
+    desc: "Pose an actual firm challenge. Students deliver structured, actionable solutions — grounded in business logic, sharpened by a perspective that only comes from outside the organisation.",
   },
   {
     icon: <Globe size={22} className="text-[#E4002B]" />,
