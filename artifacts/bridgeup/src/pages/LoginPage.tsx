@@ -36,7 +36,7 @@ export default function LoginPage() {
       <div className="w-full max-w-[440px]">
         <div className="text-center mb-10">
           <Link href="/" className="inline-flex items-center justify-center gap-2.5 mb-8" data-testid="link-logo-login">
-            <LogoMark size={38} />
+            <LogoMark size={58} />
             <span className="font-display text-[20px] font-semibold text-[#1A1A1A]">BridgeUp</span>
           </Link>
           <h1 className="font-display font-semibold text-[#1A1A1A] text-[30px] mb-2">Welcome back</h1>

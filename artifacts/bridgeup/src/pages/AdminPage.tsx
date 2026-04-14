@@ -18,7 +18,7 @@ export default function AdminPage() {
       <aside className="hidden md:flex flex-col h-screen sticky top-0 bg-white border-r border-[#E0E0E0]" style={{ width: "240px", minWidth: "240px" }}>
         <div className="px-6 py-5 border-b border-[#E0E0E0]">
           <Link href="/" className="flex items-center gap-2.5">
-            <LogoMark size={28} />
+            <LogoMark size={44} />
             <span className="font-display text-[17px] font-semibold text-[#1A1A1A]">BridgeUp</span>
           </Link>
         </div>

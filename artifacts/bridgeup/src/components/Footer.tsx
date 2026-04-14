@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5">
-              <LogoMark size={32} variant="dark" />
+              <LogoMark size={48} variant="dark" />
               <span className="font-display text-[18px] font-semibold text-white">BridgeUp</span>
             </Link>
             <p className="text-[14px] text-[rgba(255,255,255,0.5)] leading-relaxed max-w-[240px]">

@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between h-[68px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group" data-testid="link-logo">
-            <LogoMark size={34} />
+            <LogoMark size={52} />
             <span className="font-display text-[20px] font-semibold text-[#1A1A1A] tracking-tight">BridgeUp</span>
           </Link>
 
